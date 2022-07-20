@@ -78,21 +78,21 @@ app.listen(PORT, () => {
 I will use SSH to connect to a Ubuntu 20.04 Server. (Replace user & ip with your info)
 
 ```
-$ ssh root@123.456.789.149
+ssh root@123.456.789.149
 ```
 
 Now we need to get our code to run on the server.
 I used git & github to publish my code to a remote repository so i can use git clone to download the repository on the server.
 
 ```
-$ cd /var/www
-$ sudo git clone https://github.com/aaronlyy/how-to-deploy-expressjs-with-apache2
+cd /var/www
+sudo git clone https://github.com/aaronlyy/how-to-deploy-expressjs-with-apache2
 ```
 
 Now we can run our app.
 
 ```
-$ sudo npm start
+sudo npm start
 ```
 
 ## 3. Install & Setup apache2
