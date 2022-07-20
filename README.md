@@ -4,11 +4,9 @@ How to deploy an ExpressJS App behind an Apache2 reverse proxy with SSL encrypti
 ## Contents
 
 1. Setup & Write a simple ExpressJS App
-2. SSH into your server
-3. Clone your repository
-4. Setup the ExpressJS App
-5. Install apache2
-6. Setup apache2
+2. Connect to the Server and setup ExpressJS App
+3. Install apache2
+4. Setup apache2
 
 ## 1. Setup & Write a simple ExpressJS App
 
@@ -74,3 +72,19 @@ app.listen(PORT, () => {
     console.log(`Server listening on ${PORT}...`);
 })
 ```
+
+## 2. Connect to the Server and setup ExpressJS App
+
+I will use SSH to connect to a Ubuntu 20.04 Server. (Replace user & ip with your info)
+
+```
+ssh root@123.456.789.149
+```
+
+Now we need to get our code to run on the server.
+I used git & github to publish my code to a remote repository so i can use git clone to download the repository on the server.
+
+```
+git clone https://github.com/aaronlyy/how-to-deploy-expressjs-with-apache2
+```
+
