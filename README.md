@@ -5,9 +5,9 @@
 ## Contents
 
 1. Setup & Write a simple ExpressJS App
-2. Connect to the Server and setup ExpressJS App
+2. Connect to server and setup ExpressJS App
 3. Install & Setup apache2
-4. Setup apache2
+4. Enable SSL with certbot
 
 ## 1. Setup & Write a simple ExpressJS App
 
@@ -48,7 +48,7 @@ Here's the app.js code that we are going to use.
 const express = require('express');
 const morgan = require('morgan');
 
-const PORT = 5000;
+const PORT = 3000;
 
 const app = express();
 app.use(morgan('tiny'));
@@ -88,19 +88,62 @@ I used git & github to publish my code to a remote repository so i can use git c
 ```
 cd /var/www
 sudo git clone https://github.com/aaronlyy/how-to-deploy-expressjs-with-apache2
+cd how-to-deploy-expressjs-with-apache2
 ```
 
-Now we can run our app.
+No we install node & npm
 
 ```
+sudo apt udate && sudo apt upgrade
+sudo apt install nodejs npm
+```
+
+Now we can run our app to test it.
+
+```
+sudo npm install
 sudo npm start
 ```
 
+Press CTRL+C to stop the server.
+
 ## 3. Install & Setup apache2
 
-Install apache2.
+Install apache2 & modules.
 
 ```
 sudo apt install apache2
+sudo a2enmod proxy proxy_http
 ```
 
+Setup VirtualHost for our app.
+
+```
+sudo nano /etc/apache2/sites-available/express.conf
+```
+
+```
+<VirtualHost *:80>
+      ServerName v2.krotesq.com
+ 
+      ProxyPreserveHost On
+      ProxyPass / http://localhost:3000/
+      ProxyPassReverse / http://localhost:3000/
+</VirtualHost>
+```
+
+Enable the site.
+
+```
+sudo a2ensite express
+sudo systemctl restart apache2
+```
+
+## Enable SSL with Certbot
+
+```
+sudo certbot --apache
+```
+
+No we select out VirtualHost (express).
+After a short time our app should be HTTPS enabled and HTTP requests are getting redirected to HTTPS
