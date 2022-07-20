@@ -1,5 +1,6 @@
-# how-to-deploy-expressjs-with-apache2
-How to deploy an ExpressJS App behind an Apache2 reverse proxy with SSL encryption
+# How to deploy an ExpressJS App behind an Apache2 reverse proxy with SSL encryption
+
+[Why?](https://medium.com/intrinsic-blog/why-should-i-use-a-reverse-proxy-if-node-js-is-production-ready-5a079408b2ca)
 
 ## Contents
 
