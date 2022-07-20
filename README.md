@@ -8,6 +8,7 @@
 2. Connect to server and setup ExpressJS App
 3. Install & Setup apache2
 4. Enable SSL with certbot
+5. Run App with screen
 
 ## 1. Setup & Write a simple ExpressJS App
 
@@ -139,7 +140,7 @@ sudo a2ensite express
 sudo systemctl restart apache2
 ```
 
-## Enable SSL with Certbot
+## 4. Enable SSL with Certbot
 
 ```
 sudo certbot --apache
@@ -147,3 +148,13 @@ sudo certbot --apache
 
 No we select out VirtualHost (express).
 After a short time our app should be HTTPS enabled and HTTP requests are getting redirected to HTTPS
+
+## 5. Run app with screen
+
+Now we can run our ExpressJS app by navigating into the repo and running npm start.
+
+```
+cd /var/www/how-to-deploy-expressjs-with-apache2
+sudo npm start
+```
+
