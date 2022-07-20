@@ -10,7 +10,7 @@ How to deploy an ExpressJS App behind an Apache2 reverse proxy with SSL encrypti
 5. Install apache2
 6. Setup apache2
 
-## Setup & Write a simple ExpressJS App
+## 1. Setup & Write a simple ExpressJS App
 
 For demonstration purpose, we're going to write a simple ExpressJS App that returns ```{"msg": "Hello World!"}```.
 
