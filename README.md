@@ -20,7 +20,7 @@ We first need to create a new project. In our root folder we execute the follwin
 npm init -y
 ```
 
-After that we install express, morgan (for logging) with npm.
+After that we install express & morgan (for logging) with npm.
 
 ```
 npm install express morgan
@@ -36,8 +36,8 @@ Now we can add the start & start:dev scripts to our package.json.
 
 ```json
   "scripts": {
-    "start": "node /src/app.js",
-    "start:dev": "nodemon /src/app.js"
+    "start": "node src/app.js",
+    "start:dev": "nodemon src/app.js"
   }
 ```
 
