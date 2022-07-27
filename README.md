@@ -123,6 +123,8 @@ Setup VirtualHost for our app.
 sudo nano /etc/apache2/sites-available/express.conf
 ```
 
+Copy following config into file and save.
+
 ```
 <VirtualHost *:80>
       ServerName v2.krotesq.com
