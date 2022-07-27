@@ -154,9 +154,12 @@ After a short time our app should be HTTPS enabled and HTTP requests are getting
 ## 5. Run app with screen
 
 Now we can run our ExpressJS app by navigating into the repo and running npm start.
+For more info about the screen command: [How to use linux screen](https://linuxize.com/post/how-to-use-linux-screen/)
 
 ```
+sudo apt install screen
 cd /var/www/how-to-deploy-expressjs-with-apache2
+sudo screen -S app
 sudo npm start
 ```
 
